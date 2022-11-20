@@ -18,7 +18,7 @@ RUN apk add --no-cache --upgrade \
     make && \
     install -v -m755 unrar /usr/bin
 
-FROM python:3.10-alpine3.16
+FROM python:3.11-alpine3.16
 LABEL maintainer="pymedusa"
 
 LABEL name="medusa" \
