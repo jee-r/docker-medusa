@@ -8,6 +8,8 @@ jobs:
     name: Mirror
     runs-on: ubuntu-latest
     steps:
+      - name: get epository name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
@@ -15,6 +17,6 @@ jobs:
       - name: mirror to gitlab.com
         uses: jee-r/docker-git-mirror@v1
         with:
-          remote_repo: "gitlab.com/jee-r/${GITHUB_REPOSITORY#*/}.git"
+          remote_repo: "gitlab.com/jee-r/${{ env.REPO_NAME }}.git"
           remote_repo_username: ${{ secrets.GITLAB_USER }}
           remote_repo_password: ${{ secrets.GITLAB_TOKEN }}
