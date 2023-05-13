@@ -1,6 +1,6 @@
 # Build unrar.  It has been moved to non-free since Alpine 3.15.
 # https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.15.0#unrar_moved_to_non-free
-FROM alpine:3.16 as unrar-build 
+FROM alpine:3.17 as unrar-build 
 ARG UNRAR_VERSION=6.1.4
 RUN apk add --no-cache --upgrade \
       make \
@@ -18,7 +18,7 @@ RUN apk add --no-cache --upgrade \
     make && \
     install -v -m755 unrar /usr/bin
 
-FROM python:3.10-alpine3.16
+FROM python:3.10-alpine3.17
 LABEL maintainer="pymedusa"
 
 LABEL name="medusa" \
