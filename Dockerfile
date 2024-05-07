@@ -37,7 +37,9 @@ RUN apk update && \
       mediainfo \
       tzdata \
       p7zip && \
-    pip install --no-cache-dir pyopenssl && \
+    python -m pip install --no-cache-dir --upgrade \
+    	setuptools \
+    	pyopenssl && \
     mkdir -p /app && \
     chmod -R 777 /app && \
     rm -rf /tmp/* /pkgs ~/.cache /var/cache/apk/
