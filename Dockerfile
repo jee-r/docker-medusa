@@ -1,6 +1,6 @@
 # Build unrar.  It has been moved to non-free since Alpine 3.15.
 # https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.15.0#unrar_moved_to_non-free
-FROM alpine:3.19 as unrar-build 
+FROM alpine:3.20 as unrar-build 
 ARG UNRAR_VERSION=6.1.4
 RUN apk add --no-cache --upgrade \
       make \
